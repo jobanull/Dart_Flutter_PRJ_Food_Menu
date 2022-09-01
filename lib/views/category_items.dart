@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_menus_application/views/category_detail_item.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -14,7 +15,12 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, '/detail_category', arguments: {
+          'id': id,
+          'title': title,
+        });
+      },
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [
