@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_menus_application/views/category_detail_item.dart';
+import 'package:food_menus_application/views/recipe.dart';
 
 import 'views/category_menus.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/detail_category': (context) => DetailCategory(),
+        '/recipe': (context) => Recipe(),
       },
       initialRoute: '/',
     );

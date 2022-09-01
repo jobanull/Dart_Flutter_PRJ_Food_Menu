@@ -40,7 +40,12 @@ class _DetailCategoryState extends State<DetailCategory> {
               final food = filteredFood[index];
 
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/recipe', arguments: {
+                    'title': food.title,
+                    'ingredients': food.ingredients,
+                  });
+                },
                 child: Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
