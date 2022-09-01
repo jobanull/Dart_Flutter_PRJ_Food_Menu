@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'category_items.dart';
+import 'package:food_menus_application/db/dummy_data.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -13,14 +15,14 @@ class CategoryScreen extends StatelessWidget {
         crossAxisSpacing: 15,
         childAspectRatio: 10 / 15,
       ),
-      itemCount: 3,
+      itemCount: dummyCategories.length,
       itemBuilder: (context, index) {
-        return Container(
-            color: Colors.red,
-            child: Column(children: [
-              Text("Title"),
-              Text("Images"),
-            ]));
+        final category = dummyCategories[index];
+        return CategoryItem(
+          id: category.id,
+          title: category.title,
+          images: category.images,
+        );
       },
     );
   }
